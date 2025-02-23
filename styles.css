@@ -1,0 +1,61 @@
+
+body {
+    background-color: black;
+    color: lime;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.menu a {
+    color: lime;
+    text-decoration: none;
+}
+
+header h1 {
+    text-shadow: 0 0 10px red;
+}
+
+#lockscreen {
+    animation: glitch 0.3s infinite;
+}
+
+@keyframes glitch {
+    0% { transform: translate(2px, -2px); }
+    25% { transform: translate(-2px, 2px); }
+    50% { transform: translate(3px, -3px); }
+    75% { transform: translate(-3px, 3px); }
+    100% { transform: translate(2px, -2px); }
+}
+
+.form-container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+form input, form textarea, form button {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    background: black;
+    border: 1px solid lime;
+    color: lime;
+}
+
+form button {
+    background: lime;
+    color: black;
+    font-weight: bold;
+}

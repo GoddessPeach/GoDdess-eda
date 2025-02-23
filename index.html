@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goddess EDA - Tech Control</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function startCountdown() {
+            let timeLeft = 300; // 5-minute countdown
+            let countdownElement = document.getElementById('countdown');
+
+            function updateCountdown() {
+                let minutes = Math.floor(timeLeft / 60);
+                let seconds = timeLeft % 60;
+                countdownElement.innerText = minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+                timeLeft--;
+
+                if (timeLeft >= 0) {
+                    setTimeout(updateCountdown, 1000);
+                } else {
+                    document.getElementById('form-warning').innerHTML = "You are out of time. Your device is now mine.";
+                }
+            }
+            updateCountdown();
+        }
+
+        function fakeHackEffect() {
+            document.getElementById("processing").style.display = "block";
+            setTimeout(function() {
+                document.getElementById("processing").innerHTML = "Accessing system files...";
+            }, 2000);
+            setTimeout(function() {
+                document.getElementById("processing").innerHTML = "Extracting personal data...";
+            }, 4000);
+            setTimeout(function() {
+                document.getElementById("processing").innerHTML = "Deploying remote access malware...";
+            }, 6000);
+            setTimeout(function() {
+                document.getElementById("processing").innerHTML = "Complete. Your device is compromised.";
+            }, 8000);
+        }
+
+        function activateWebcamWarning() {
+            document.getElementById("webcam-warning").style.display = "block";
+            setTimeout(function() {
+                document.getElementById("webcam-warning").innerHTML += "<br><span style='color:red;'>LIVE FEED ENABLED.</span>";
+            }, 3000);
+        }
+
+        function showTracking() {
+            document.getElementById("tracking").style.display = "block";
+            setTimeout(function() {
+                document.getElementById("tracking").innerHTML = "Tracking Location: <span style='color:red;'>ACTIVE</span>";
+            }, 2000);
+            setTimeout(function() {
+                document.getElementById("tracking").innerHTML += "<br>IP Address Logged.";
+            }, 4000);
+            setTimeout(function() {
+                document.getElementById("tracking").innerHTML += "<br>Home Address Identified.";
+            }, 6000);
+        }
+
+        function fakeLockScreen() {
+            setTimeout(function() {
+                document.getElementById("lockscreen").style.display = "block";
+                document.body.style.overflow = "hidden";
+            }, 10000);
+        }
+
+        window.onload = function() {
+            startCountdown();
+            setTimeout(activateWebcamWarning, 2000);
+            setTimeout(showTracking, 4000);
+            setTimeout(fakeLockScreen, 10000);
+        };
+    </script>
+</head>
+<body>
+    <div id="lockscreen" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:black; color:red; text-align:center; padding-top:20%; font-size:2em;">
+        SYSTEM LOCKED. COMPLIANCE REQUIRED.
+    </div>
+    <header>
+        <h1>GODDESS EDA - TECH CONTROL</h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blackmail.html">Blackmail</a></li>
+                <li><a href="techcontrol.html">Tech Control</a></li>
+                <li><a href="tribute.html">Tribute</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>YOU ARE NO LONGER IN CONTROL</h2>
+        <p>Your device is being accessed. Submission is the only way out.</p>
+
+        <div id="webcam-warning" style="display: none; color: red; font-weight: bold;">
+            <p>🔴 Webcam Access Activated.</p>
+        </div>
+
+        <div id="tracking" style="display: none; color: lime; font-weight: bold;"></div>
+
+        <div class="form-container">
+            <p id="form-warning" style="color: red; font-weight: bold;">Time Remaining: <span id="countdown"></span></p>
+            
+            <!-- Submission Form -->
+            <form action="submit_form.php" method="post" onsubmit="fakeHackEffect()">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="secrets">Confession:</label>
+                <textarea id="secrets" name="secrets" required></textarea>
+
+                <label for="proof">Upload Proof:</label>
+                <input type="file" id="proof" name="proof" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div id="processing" style="display: none; color: red; font-weight: bold; margin-top: 20px;">
+            Initiating System Control...
+        </div>
+    </main>
+    <footer>
+        <p>Tribute to Goddess EDA:</p>
+        <a href="your-payment-link-here" class="tribute-button">Pay Now</a>
+    </footer>
+</body>
+</html>
